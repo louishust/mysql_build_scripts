@@ -17,7 +17,7 @@ else
 
   # create default database
   cd mysql/scripts
-  ./mysql_install_db --datadir=../data --basedir=../ --user=$whoami
+  ./mysql_install_db --datadir=../data --basedir=../ --lc-messages-dir=../share/ --user=$whoami
 
   cd ../../
   cur_path=`pwd`
