@@ -15,16 +15,18 @@ else
 
   make && make install
 
-  # create default database
-  cd mysql/scripts
-  ./mysql_install_db --datadir=../data --basedir=../ --user=$whoami
-
-  cd ../../
+  cd mysql
   cur_path=`pwd`
   echo "[mysqld]
   gdb
   basedir=${cur_path}/mysql/
   datadir=${cur_path}/mysql/data
   socket=${cur_path}/mysql/data/my.sock
-  " > ./mysql/my.cnf
+  " > my.cnf
+
+
+  # create default database
+  cd scripts
+  ./mysql_install_db --defaults-file=../my.cnf --datadir=../data --basedir=../ --user=$whoami
+
 fi
