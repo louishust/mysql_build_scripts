@@ -19,9 +19,9 @@ else
   cur_path=`pwd`
   echo "[mysqld]
   gdb
-  basedir=${cur_path}/mysql/
-  datadir=${cur_path}/mysql/data
-  socket=${cur_path}/mysql/data/my.sock
+  basedir=${cur_path}/
+  datadir=${cur_path}/data
+  socket=${cur_path}/data/my.sock
   " > my.cnf
 
 
